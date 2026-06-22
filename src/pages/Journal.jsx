@@ -1,5 +1,6 @@
 import TrustBadges from '../components/TrustBadges';
 import Footer from '../components/Footer';
+import { Link } from 'react-router-dom';
 
 const articles = [
   { cat: 'SILK ORIGINS', title: 'Kanchipuram: Where Every Thread Tells a Temple Tale', desc: 'Discover the divine geometry woven into every Kanchipuram saree — patterns inspired by temple architecture and sacred motifs.', date: 'May 18, 2025', read: '6 min read', img: 'w1.png', tag: 'CULTURE' },
@@ -55,8 +56,9 @@ export default function Journal() {
               <span><i className="fas fa-calendar-alt mr-2 text-gold"></i>June 2, 2025</span>
               <span><i className="fas fa-clock mr-2 text-gold"></i>8 min read</span>
             </div>
-            <a href="#" className="btn-primary">READ ARTICLE <i className="fas fa-arrow-right"></i></a>
-          </div>
+            <Link to="/journal" className="btn-primary">
+              READ ARTICLE <i className="fas fa-arrow-right"></i>
+            </Link>          </div>
         </div>
       </section>
 
@@ -83,9 +85,12 @@ export default function Journal() {
                       <span>{art.date}</span>
                       <span>{art.read}</span>
                     </div>
-                    <a href="#" className="text-xs font-bold tracking-widest text-dark-charcoal hover:text-rose transition-colors duration-200">
+                    <Link
+                      to="/journal"
+                      className="text-xs font-bold tracking-widest text-dark-charcoal hover:text-rose transition-colors duration-200"
+                    >
                       READ MORE <i className="fas fa-arrow-right ml-1"></i>
-                    </a>
+                    </Link>
                   </div>
                 </div>
               </article>

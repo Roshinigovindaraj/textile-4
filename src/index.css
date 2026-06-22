@@ -1104,3 +1104,57 @@ body {
 
 .nav-link:hover::after, .nav-link.active::after { width: 100%; }
 .nav-link:hover, .nav-link.active { color: var(--gold); }
+
+/* Mobile tweaks for CATEGORY slider so cards are fully visible */
+@media (max-width: 600px) {
+  .vayu-categories {
+    flex-direction: column;
+    align-items: stretch;
+    padding-left: 20px;
+    padding-right: 20px;
+    gap: 12px;
+  }
+
+  .vayu-category-label {
+    min-width: unset;
+    width: 100%;
+    text-align: left;
+    padding-left: 6px;
+    margin-bottom: 8px;
+  }
+
+  .vayu-category-slider-wrap {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    position: relative;
+    justify-content: center;
+  }
+
+  /* give horizontal padding so the first/last card isn't hidden behind the arrows */
+  .vayu-category-cards {
+    padding: 0 20px;
+    overflow: visible; /* allow cards to be visible when partially outside */
+  }
+
+  /* Make nav buttons overlay the slider rather than affect layout */
+  .vayu-slider-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 5;
+    width: 40px;
+    height: 40px;
+    box-shadow: 0 6px 18px rgba(0,0,0,0.12);
+  }
+  .vayu-slider-btn.prev { left: 8px; }
+  .vayu-slider-btn.next { right: 8px; margin-right: 0; }
+
+  /* ensure cards keep their intended width but are fully visible */
+  .vayu-cat-card { min-width: 170px; }
+
+  /* nudge the inner cards container so first card centers better */
+  .vayu-cards-inner {
+    padding-left: 6px;
+  }
+}
